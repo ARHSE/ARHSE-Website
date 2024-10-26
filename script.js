@@ -16,63 +16,107 @@ document
     }
   });
 
-// Function to render project components with optional image and link
+// Default language
+let currentLanguage = "en";
+
+// Function to render Navbar with links based on available text
+function renderNavbar() {
+  const navbarContainer = document.getElementById("navbarLinks");
+
+  // Load content dynamically
+  navbarContainer.innerHTML = `
+        ${
+          aboutContent[currentLanguage].navbarText
+            ? `<a class="nav-link" href="#about">${aboutContent[currentLanguage].navbarText}</a>`
+            : ""
+        }
+        ${
+          projectsContent[currentLanguage].navbarText
+            ? `<a class="nav-link" href="#projects">${projectsContent[currentLanguage].navbarText}</a>`
+            : ""
+        }
+        ${
+          testimonialsContent[currentLanguage].navbarText &&
+          testimonialsContent[currentLanguage].testimonials.length > 0
+            ? `<a class="nav-link" href="#testimonials">${testimonialsContent[currentLanguage].navbarText}</a>`
+            : ""
+        }
+    `;
+}
+
+// Function to render the About section
+function renderAbout() {
+  const aboutContainer = document.getElementById("aboutContainer");
+  aboutContainer.innerHTML = aboutContent[currentLanguage].content;
+}
+
+// Function to render Projects
 function renderProjects() {
   const projectContainer = document.getElementById("projectContainer");
-  projectContainer.innerHTML = "";
-
-  projects.forEach((project) => {
-    const projectCard = `
+  const projectData = projectsContent[currentLanguage].projects;
+  projectContainer.innerHTML = projectData
+    .map(
+      (project) => `
         <div class="col-lg-4 col-md-6 mb-4">
             <div class="card">
-                ${
-                  project.image
-                    ? `<img src="${project.image}" class="card-img-top" alt="${project.title}">`
-                    : ""
-                }
                 <div class="card-body">
                     <h5 class="card-title">${project.title}</h5>
                     <p class="card-text">${project.description}</p>
-                    ${
-                      project.link
-                        ? `<a href="${project.link}" target="_blank" class="btn btn-primary">View Project</a>`
-                        : ""
-                    }
                 </div>
             </div>
         </div>
-        `;
-    projectContainer.innerHTML += projectCard;
-  });
+    `
+    )
+    .join("");
 }
 
-// Function to render testimonials with optional image
+// Function to render Testimonials and hide if empty
 function renderTestimonials() {
+  const testimonialsSection = document.getElementById("testimonials");
   const testimonialContainer = document.getElementById("testimonialContainer");
-  testimonialContainer.innerHTML = "";
+  const testimonialData = testimonialsContent[currentLanguage].testimonials;
 
-  testimonials.forEach((testimonial) => {
-    const testimonialCard = `
-        <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card text-center">
-                ${
-                  testimonial.image
-                    ? `<img src="${testimonial.image}" class="card-img-top rounded-circle mx-auto mt-3" alt="${testimonial.name}" style="width: 100px; height: 100px;">`
-                    : ""
-                }
-                <div class="card-body">
-                    <h5 class="card-title">${testimonial.name}</h5>
-                    <p class="card-text">"${testimonial.feedback}"</p>
+  if (testimonialData.length === 0) {
+    testimonialsSection.style.display = "none";
+  } else {
+    testimonialsSection.style.display = "block";
+    testimonialContainer.innerHTML = testimonialData
+      .map(
+        (testimonial) => `
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h5 class="card-title">${testimonial.name}</h5>
+                        <p class="card-text">"${testimonial.feedback}"</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        `;
-    testimonialContainer.innerHTML += testimonialCard;
-  });
+        `
+      )
+      .join("");
+  }
 }
 
-// Render projects and testimonials on page load
-document.addEventListener("DOMContentLoaded", () => {
+// Function to switch language and update the website content
+function switchLanguage() {
+  currentLanguage = currentLanguage === "en" ? "de" : "en";
+  document.getElementById("languageToggle").src =
+    currentLanguage === "en" ? "images/gb.svg" : "images/de.svg";
+  renderNavbar();
+  renderAbout();
   renderProjects();
   renderTestimonials();
+}
+
+// Initial Render on Page Load
+document.addEventListener("DOMContentLoaded", () => {
+  renderNavbar();
+  renderAbout();
+  renderProjects();
+  renderTestimonials();
+
+  // Attach event listener for language toggle
+  document
+    .getElementById("languageToggle")
+    .addEventListener("click", switchLanguage);
 });
