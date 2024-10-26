@@ -1,0 +1,26 @@
+const contactContent = {
+  en: {
+    sectionText: "Contact",
+    navbarText: "Contact",
+    content: `Contact`,
+    name: `Name`,
+    namePlaceholder: `Your Name`,
+    email: `Email`,
+    emailPlaceholder: `Your Email`,
+    message: `Message`,
+    messagePlaceholder: `Your Message`,
+    sendButton: `Send Message`,
+  },
+  de: {
+    sectionText: "Kontakt",
+    navbarText: "Kontakt",
+    content: `Kontakt`,
+    name: `Name`,
+    namePlaceholder: `Ihr Name`,
+    email: `E-Mail`,
+    emailPlaceholder: `Ihre E-Mail`,
+    message: `Nachricht`,
+    messagePlaceholder: `Ihre Nachricht`,
+    sendButton: `Nachricht senden`,
+  },
+};

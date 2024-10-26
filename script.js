@@ -44,16 +44,28 @@ function renderNavbar() {
     `;
 }
 
+function renderHero() {
+  const heroHeader = document.getElementById("heroHeader");
+  const heroText = document.getElementById("heroText");
+
+  heroHeader.innerHTML = heroContent[currentLanguage].header;
+  heroText.innerHTML = heroContent[currentLanguage].content;
+}
+
 // Function to render the About section
 function renderAbout() {
+  const aboutTitle = document.getElementById("aboutTitle");
   const aboutContainer = document.getElementById("aboutContainer");
+  aboutTitle.innerHTML = aboutContent[currentLanguage].sectionText;
   aboutContainer.innerHTML = aboutContent[currentLanguage].content;
 }
 
 // Function to render Projects
 function renderProjects() {
+  const projectTitle = document.getElementById("projectsTitle");
   const projectContainer = document.getElementById("projectContainer");
   const projectData = projectsContent[currentLanguage].projects;
+  projectTitle.innerHTML = projectsContent[currentLanguage].sectionText;
   projectContainer.innerHTML = projectData
     .map(
       (project) => `
@@ -72,6 +84,7 @@ function renderProjects() {
 
 // Function to render Testimonials and hide if empty
 function renderTestimonials() {
+  const testimonialsTitle = document.getElementById("testimonialsTitle");
   const testimonialsSection = document.getElementById("testimonials");
   const testimonialContainer = document.getElementById("testimonialContainer");
   const testimonialData = testimonialsContent[currentLanguage].testimonials;
@@ -80,6 +93,8 @@ function renderTestimonials() {
     testimonialsSection.style.display = "none";
   } else {
     testimonialsSection.style.display = "block";
+    testimonialsTitle.innerHTML =
+      testimonialsContent[currentLanguage].sectionText;
     testimonialContainer.innerHTML = testimonialData
       .map(
         (testimonial) => `
@@ -97,23 +112,61 @@ function renderTestimonials() {
   }
 }
 
+function renderContact() {
+  const contactSection = document.getElementById("contact");
+  const contactHeader = document.getElementById("contactHeader");
+
+  const nameLabel = document.getElementById("nameLabel");
+  const nameInput = document.getElementById("name");
+
+  const emailLabel = document.getElementById("emailLabel");
+  const emailInput = document.getElementById("email");
+
+  const messageLabel = document.getElementById("messageLabel");
+  const messageInput = document.getElementById("message");
+
+  const sendButton = document.getElementById("sendButton");
+
+  const contactData = contactContent[currentLanguage];
+
+  if (contactData.length === 0) {
+    contactSection.style.display = "none";
+  } else {
+    contactSection.style.display = "true";
+    contactHeader.innerHTML = contactData.sectionText;
+    nameLabel.innerHTML = contactData.name;
+    nameInput.placeholder = contactData.namePlaceholder;
+
+    emailLabel.innerHTML = contactData.email;
+    emailInput.placeholder = contactData.emailPlaceholder;
+
+    messageLabel.innerHTML = contactData.message;
+    messageInput.placeholder = contactData.messagePlaceholder;
+
+    sendButton.innerHTML = contactData.sendButton;
+  }
+}
+
+function renderTexts() {
+  renderNavbar();
+  renderHero();
+  renderAbout();
+  renderProjects();
+  renderTestimonials();
+  renderContact();
+}
+
 // Function to switch language and update the website content
 function switchLanguage() {
   currentLanguage = currentLanguage === "en" ? "de" : "en";
   document.getElementById("languageToggle").src =
     currentLanguage === "en" ? "images/gb.svg" : "images/de.svg";
-  renderNavbar();
-  renderAbout();
-  renderProjects();
-  renderTestimonials();
+  renderTexts();
 }
 
 // Initial Render on Page Load
 document.addEventListener("DOMContentLoaded", () => {
-  renderNavbar();
-  renderAbout();
-  renderProjects();
-  renderTestimonials();
+  renderTexts();
 
   // Attach event listener for language toggle
   document
