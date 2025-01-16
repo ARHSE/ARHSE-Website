@@ -4,11 +4,15 @@ const aboutContent = {
   en: {
     sectionText: "About Me",
     navbarText: "About",
-    content: `Hello! I’m FirstName LastName, a freelance systems engineer based in Germany. I specialize in mechanical design, product optimization, and structural analysis. I am passionate about delivering tailored engineering solutions to meet each client’s unique needs.`,
+    content: `Level B (CSEP) certified systems engineer with experience in the aerospace, automotive and defence industry.
+I am passionate about solving challenging engineering problems, coaching others and being a bridge between the customers and the developers.
+`,
   },
   de: {
     sectionText: "Über mich",
     navbarText: "Über",
-    content: `Hallo! Ich bin FirstName LastName, freiberuflicher Systemingenieur mit Sitz in Deutschland. Ich spezialisiere mich auf mechanisches Design, Produktoptimierung und Strukturanalyse. Es ist meine Leidenschaft, maßgeschneiderte Ingenieurlösungen anzubieten, die den individuellen Anforderungen jedes Kunden gerecht werden.`,
+    content: `Zertifizierter Systemingenieur der Stufe B (CSEP) mit Erfahrung in der Luft- und Raumfahrt-, Automobil- und Rüstungsindustrie.
+Meine Leidenschaft ist es, anspruchsvolle technische Probleme zu lösen, andere zu coachen und eine Brücke zwischen Kunden und Entwicklern zu sein.
+`,
   },
 };
