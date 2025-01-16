@@ -2,11 +2,11 @@
 
 const heroContent = {
   en: {
-    header: "Freelance Engineer in Germany",
-    content: `Providing professional engineering solutions for industries and individuals.`,
+    header: "Freelance Systems Engineer",
+    content: `Providing tailored solutions and coaching for all processes inside the V-Model.`,
   },
   de: {
-    header: "System Ingenieur aus Deutschland",
-    content: `Professionelle Lösungen für die Industrie`,
+    header: "Freier Berater für alle Systems Engineering Herausforderungen",
+    content: `Bereitstellung von maßgeschneiderten Lösungen und Coaching für alle Prozesse innerhalb des V-Modells`,
   },
 };
