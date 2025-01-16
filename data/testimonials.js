@@ -2,7 +2,7 @@
 
 const testimonialsContent = {
   en: {
-    sectionText: "What My Clients Say",
+    sectionText: "Testimonials",
     navbarText: "Testimonials",
     testimonials: [
       {
@@ -18,8 +18,8 @@ const testimonialsContent = {
     ],
   },
   de: {
-    sectionText: "Kundenbewertungen",
-    navbarText: "Bewertungen",
+    sectionText: "Erfahrungsberichte",
+    navbarText: "Erfahrungsberichte",
     testimonials: [
       {
         name: "Johann Müller",
