@@ -31,6 +31,11 @@ function renderNavbar() {
             : ""
         }
         ${
+          servicesContent[currentLanguage].navbarText
+            ? `<a class="nav-link" href="#projects">${servicesContent[currentLanguage].navbarText}</a>`
+            : ""
+        }
+        ${
           projectsContent[currentLanguage].navbarText
             ? `<a class="nav-link" href="#projects">${projectsContent[currentLanguage].navbarText}</a>`
             : ""
@@ -52,6 +57,33 @@ function renderAbout() {
   const aboutContainer = document.getElementById("aboutContainer");
   aboutTitle.innerHTML = aboutContent[currentLanguage].sectionText;
   aboutContainer.innerHTML = aboutContent[currentLanguage].content;
+}
+
+// Function to render Services
+function renderServices() {
+  const servicesTitle = document.getElementById("servicesTitle");
+  const servicesContainer = document.getElementById("servicesContainer");
+  const servicesData = servicesContent[currentLanguage].services;
+  servicesTitle.innerHTML = servicesContent[currentLanguage].sectionText;
+  servicesContainer.innerHTML = servicesData
+    .map(
+      (services) => `
+      <div class="accordion-item">
+                    <h2 class="accordion-header" id="${services.title.replace(/\s/g,"")}-heading">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#${services.title.replace(/\s/g,"")}-text" aria-expanded="false" aria-controls="${services.title.replace(/\s/g,"")}-text">
+                            <strong>${services.title}</strong>
+                          </button>
+                    </h2>
+                    <div id="${services.title.replace(/\s/g,"")}-text" class="accordion-collapse collapse" aria-labelledby="${services.title.replace(/\s/g,"")}-heading"
+                        data-bs-parent="#servicesContainer">
+                        <div class="accordion-body">
+                            ${services.description}
+                        </div>
+                    </div>
+    `
+    )
+    .join("");
 }
 
 // Function to render Projects
@@ -150,6 +182,7 @@ function renderTexts() {
   renderNavbar();
   renderHero();
   renderAbout();
+  renderServices();
   renderProjects();
   // renderTestimonials();
   renderContact();
