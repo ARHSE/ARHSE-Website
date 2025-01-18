@@ -32,7 +32,7 @@ function renderNavbar() {
         }
         ${
           servicesContent[currentLanguage].navbarText
-            ? `<a class="nav-link" href="#projects">${servicesContent[currentLanguage].navbarText}</a>`
+            ? `<a class="nav-link" href="#services">${servicesContent[currentLanguage].navbarText}</a>`
             : ""
         }
         ${
@@ -69,13 +69,28 @@ function renderServices() {
     .map(
       (services) => `
       <div class="accordion-item">
-                    <h2 class="accordion-header" id="${services.title.replace(/\s/g,"")}-heading">
+                    <h2 class="accordion-header" id="${services.title.replace(
+                      /\s/g,
+                      ""
+                    )}-heading">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#${services.title.replace(/\s/g,"")}-text" aria-expanded="false" aria-controls="${services.title.replace(/\s/g,"")}-text">
+                            data-bs-target="#${services.title.replace(
+                              /\s/g,
+                              ""
+                            )}-text" aria-expanded="false" aria-controls="${services.title.replace(
+        /\s/g,
+        ""
+      )}-text">
                             <strong>${services.title}</strong>
                           </button>
                     </h2>
-                    <div id="${services.title.replace(/\s/g,"")}-text" class="accordion-collapse collapse" aria-labelledby="${services.title.replace(/\s/g,"")}-heading"
+                    <div id="${services.title.replace(
+                      /\s/g,
+                      ""
+                    )}-text" class="accordion-collapse collapse" aria-labelledby="${services.title.replace(
+        /\s/g,
+        ""
+      )}-heading"
                         data-bs-parent="#servicesContainer">
                         <div class="accordion-body">
                             ${services.description}
@@ -96,13 +111,28 @@ function renderProjects() {
     .map(
       (project) => `
       <div class="accordion-item">
-                    <h2 class="accordion-header" id="${project.title.replace(/\s/g,"")}-heading">
+                    <h2 class="accordion-header" id="${project.title.replace(
+                      /\s/g,
+                      ""
+                    )}-heading">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#${project.title.replace(/\s/g,"")}-text" aria-expanded="false" aria-controls="${project.title.replace(/\s/g,"")}-text">
+                            data-bs-target="#${project.title.replace(
+                              /\s/g,
+                              ""
+                            )}-text" aria-expanded="false" aria-controls="${project.title.replace(
+        /\s/g,
+        ""
+      )}-text">
                             <strong>${project.title}</strong>
                           </button>
                     </h2>
-                    <div id="${project.title.replace(/\s/g,"")}-text" class="accordion-collapse collapse" aria-labelledby="${project.title.replace(/\s/g,"")}-heading"
+                    <div id="${project.title.replace(
+                      /\s/g,
+                      ""
+                    )}-text" class="accordion-collapse collapse" aria-labelledby="${project.title.replace(
+        /\s/g,
+        ""
+      )}-heading"
                         data-bs-parent="#projectContainer">
                         <div class="accordion-body">
                             ${project.description}
