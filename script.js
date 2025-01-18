@@ -34,13 +34,7 @@ function renderNavbar() {
           projectsContent[currentLanguage].navbarText
             ? `<a class="nav-link" href="#projects">${projectsContent[currentLanguage].navbarText}</a>`
             : ""
-        }
-        ${
-          testimonialsContent[currentLanguage].navbarText &&
-          testimonialsContent[currentLanguage].testimonials.length > 0
-            ? `<a class="nav-link" href="#testimonials">${testimonialsContent[currentLanguage].navbarText}</a>`
-            : ""
-        }
+        }        
     `;
 }
 
@@ -69,14 +63,19 @@ function renderProjects() {
   projectContainer.innerHTML = projectData
     .map(
       (project) => `
-        <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">${project.title}</h5>
-                    <p class="card-text">${project.description}</p>
-                </div>
-            </div>
-        </div>
+      <div class="accordion-item">
+                    <h2 class="accordion-header" id="${project.title.replace(/\s/g,"")}-heading">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#${project.title.replace(/\s/g,"")}-text" aria-expanded="false" aria-controls="${project.title.replace(/\s/g,"")}-text">
+                            <strong>${project.title}</strong>
+                          </button>
+                    </h2>
+                    <div id="${project.title.replace(/\s/g,"")}-text" class="accordion-collapse collapse" aria-labelledby="${project.title.replace(/\s/g,"")}-heading"
+                        data-bs-parent="#projectContainer">
+                        <div class="accordion-body">
+                            ${project.description}
+                        </div>
+                    </div>
     `
     )
     .join("");
@@ -152,7 +151,7 @@ function renderTexts() {
   renderHero();
   renderAbout();
   renderProjects();
-  renderTestimonials();
+  // renderTestimonials();
   renderContact();
 }
 

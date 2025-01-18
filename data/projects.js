@@ -6,19 +6,48 @@ const projectsContent = {
     navbarText: "Projects",
     projects: [
       {
-        title: "Mechanical Design",
+        title: "11/2023 – now: Defence",
         description:
-          "Developed a custom mechanical design for a German manufacturing company, including CAD modeling, testing, and implementation.",
+          "Development of a project wide requirements management process.",
       },
       {
-        title: "Product Optimization",
-        description:
-          "Optimized a manufacturing process for a leading automotive company, reducing production costs by 15% and improving efficiency.",
+        title: "11/2023 – 04/2023: Defence",
+        description: "Review and improvement of requirements specifications.",
       },
       {
-        title: "Structural Analysis",
+        title: "05/2023 – 10/2023: Automotive OEM",
         description:
-          "Conducted structural analysis for a construction company to ensure compliance with German engineering standards.",
+          "Systems Engineering change management and process/method development regarding requirements- and architecture as well as Integration and V&V management.",
+      },
+      {
+        title: "03/2023 – 05/2023: Automotive OEM",
+        description:
+          "High level generic Systems Engineering process and method development for requirements- and architecture processes.",
+      },
+      {
+        title: "07/2022 – 10/2023: Various industries",
+        description:
+          "Systems Engineering Trainings and Coaching (Basic, Advanced, Management Awareness, Level C Certification).",
+      },
+      {
+        title: "05/2022 – 03/2023: Automotive OEM",
+        description:
+          "Systems Engineering Change and process management in Integration and V&V management to fulfil ASPICE Level 2 requirements.",
+      },
+      {
+        title: "10/2020 – 05/2022: Automotive OEM",
+        description:
+          "Test and quality management for an agile software development project.",
+      },
+      {
+        title: "01/2020 – 10/2020: Aerospace / Defence",
+        description:
+          "Certification support for aircraft aerial delivery capabilities.",
+      },
+      {
+        title: "05/2018 – 12/2019: Aerospace / Defence",
+        description:
+          "Creation and application of system simulations in support of development processes.",
       },
     ],
   },
@@ -27,19 +56,49 @@ const projectsContent = {
     navbarText: "Projekte",
     projects: [
       {
-        title: "Mechanisches Design",
+        title: "11/2023 - jetzt: Rüstung",
         description:
-          "Entwicklung eines benutzerdefinierten mechanischen Designs für ein deutsches Fertigungsunternehmen, einschließlich CAD-Modellierung, Tests und Implementierung.",
+          "Entwicklung eines projektweiten Anforderungsmanagementprozesses.",
       },
       {
-        title: "Produktoptimierung",
+        title: "11/2023 - 04/2023: Rüstung",
         description:
-          "Optimierung eines Fertigungsprozesses für ein führendes Automobilunternehmen, Reduzierung der Produktionskosten um 15 % und Verbesserung der Effizienz.",
+          "Überprüfung und Verbesserung von Anforderungsspezifikationen.",
       },
       {
-        title: "Strukturanalyse",
+        title: "05/2023 – 10/2023: Automobilhersteller (OEM)",
         description:
-          "Durchführung von Strukturanalysen für ein Bauunternehmen, um die Einhaltung deutscher Ingenieurstandards sicherzustellen.",
+          "Systems Engineering Änderungsmanagement und Prozess-/Methodenentwicklung hinsichtlich Anforderungs- und Architektur sowie Integrations- und V&V-Management.",
+      },
+      {
+        title: "03/2023 – 05/2023: Automobilhersteller (OEM)",
+        description:
+          "High Level generische Systems Engineering Prozess- und Methodenentwicklung für Anforderungs- und Architekturprozesse.",
+      },
+      {
+        title: "07/2022 – 10/2023: Verschiedene Branchen",
+        description:
+          "Systems Engineering Trainings und Coaching (Grundlagen, Fortgeschritten, Management Awareness, Level C Zertifizierung).",
+      },
+      {
+        title: "05/2022 – 03/2023: Automobilhersteller (OEM)",
+        description:
+          "Systems Engineering Änderungs- und Prozessmanagement in Integrations- und V&V Management zur Erfüllung der ASPICE Level 2 Anforderungen.",
+      },
+      {
+        title: "10/2020 – 05/2022: Automobilhersteller (OEM)",
+        description:
+          "Test- und Qualitätsmanagement für ein agiles Softwareentwicklungsprojekt.",
+      },
+      {
+        title: "01/2020 – 10/2020: Luft- und Raumfahrt/Rüstung",
+        description:
+          "Zertifizierungsunterstützung für die Luftabsetzungsfähigkeiten eines Flugzeugs.",
+      },
+      {
+        title: "05/2018 – 12/2019: Luft- und Raumfahrt/Rüstung",
+        description:
+          "Erstellung und Anwendung von Systemsimulationen zur Unterstützung von Entwicklungsprozessen.",
       },
     ],
   },
