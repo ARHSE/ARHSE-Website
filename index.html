@@ -81,21 +81,22 @@
                 <div class="row">
                     <div class="col-md-6 mb-3">
                         <label for="name" class="form-label" id="nameLabel">Name</label>
-                        <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                        <input type="text" class="form-control" id="name" name="subject" placeholder="Your Name" required>
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="email" class="form-label" id="emailLabel">Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                        <input type="email" name="email" class="form-control" id="email" placeholder="Your Email" required>
                     </div>
                 </div>
                 <div class="mb-3">
                     <label for="message" class="form-label" id="messageLabel">Message</label>
-                    <textarea class="form-control" id="message" rows="5" placeholder="Your Message" required></textarea>
+                    <textarea class="form-control" id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary" id="sendButton">Send Message</button>
             </form>
         </div>
     </section>
+
 
     <!-- Footer -->
     <footer class="bg-light text-center py-4">

@@ -1,17 +1,16 @@
-// Simple form validation
 document
   .getElementById("contactForm")
   .addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent form from submitting
-
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const message = document.getElementById("message").value;
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
 
     if (name && email && message) {
-      alert("Thank you for your message!");
-      // In a real-world application, you would send the form data to your server here.
+      // Validation passed, allow form submission
+      return; // No need to prevent default
     } else {
+      // Validation failed, prevent form submission
+      event.preventDefault();
       alert("Please fill in all fields.");
     }
   });
@@ -206,6 +205,10 @@ function renderContact() {
 
     sendButton.innerHTML = contactData.sendButton;
   }
+
+  const contactForm = document.getElementById("contactForm");
+  contactForm.action = "https://formspree.io/f/myzkgvwd";
+  contactForm.method = "POST";
 }
 
 function renderTexts() {
