@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f8f9fa;
+        }
+
+        .thank-you-container {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            color: #222;
+        }
+
+        p {
+            margin-top: 10px;
+            font-size: 1.2em;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="thank-you-container">
+        <h1 id="thankYouHeader"></h1>
+        <p id="thankYouMessage"></p>
+    </div>
+
+    <script>
+        // Function to get the value of a query parameter
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Determine the language from the query parameter
+        const lang = getQueryParam('lang');
+
+        // Content in English and German
+        const messages = {
+            en: {
+                header: "Thank You!",
+                message: "Your email has been sent successfully.",
+            },
+            de: {
+                header: "Vielen Dank!",
+                message: "Ihre E-Mail wurde erfolgreich versendet.",
+            },
+        };
+
+        // Set default language to English if `lang` is not specified or invalid
+        const selectedLanguage = messages[lang] ? lang : 'en';
+
+        // Update the content dynamically
+        document.getElementById('thankYouHeader').textContent = messages[selectedLanguage].header;
+        document.getElementById('thankYouMessage').textContent = messages[selectedLanguage].message;
+    </script>
+</body>
+
+</html>
