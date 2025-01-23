@@ -225,7 +225,9 @@ function renderTexts() {
 function switchLanguage() {
   currentLanguage = currentLanguage === "en" ? "de" : "en";
   document.getElementById("languageToggle").src =
-    currentLanguage === "en" ? "images/gb.svg" : "images/de.svg";
+    currentLanguage === "en"
+      ? "https://flagicons.lipis.dev/flags/4x3/gb.svg"
+      : "https://flagicons.lipis.dev/flags/4x3/de.svg";
   renderTexts();
 }
 
