@@ -7,6 +7,16 @@ document
 
     if (name && email && message) {
       // Validation passed, allow form submission
+      const honeypot = document.getElementById("hopo").value;
+
+      if (honeypot) {
+        // If the honeypot field is filled, remove form action and method
+        event.preventDefault();
+        this.removeAttribute("method");
+        this.removeAttribute("action");
+        // console.warn("Spam detected: Form submission prevented.");
+      }
+
       return; // No need to prevent default
     } else {
       // Validation failed, prevent form submission
