@@ -12,19 +12,23 @@
 <body>
     <!-- Navbar with Language Toggle -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-            <a class="navbar-brand" href="#">Adrian Ramón Held</a>
-            <div class="navbar-nav ms-auto" id="navbarLinks"></div>
-            <img id="languageToggle" src="https://flagicons.lipis.dev/flags/4x3/gb.svg" alt="Toggle Language"
-                style="cursor: pointer; width: 24px; margin-left: 15px;">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarContent">
+                <a class="navbar-brand" href="#">Adrian Ramón Held</a>
+                <div class="navbar-nav ms-auto" id="navbarLinks"></div>
+                <div class="d-flex align-items-center">
+                    <img id="languageToggle" src="https://flagicons.lipis.dev/flags/4x3/gb.svg" alt="Toggle Language"
+                        style="cursor: pointer; width: 24px; margin-left: 15px;">
+                </div>
+            </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="py-5 hero-section text-center d-flex align-items-center justify-content-center">
-        <div>
-            <h1 id="heroHeader">Freelance Engineer in Germany</h1>
-            <p id="heroText">Providing professional engineering solutions for industries and individuals.</p>
+        <div class="container">
+            <h1 id="heroHeader" class="text-break">Freelance Engineer in Germany</h1>
+            <p id="heroText" class="text-break">Providing professional engineering solutions for industries and individuals.</p>
         </div>
     </section>
 
